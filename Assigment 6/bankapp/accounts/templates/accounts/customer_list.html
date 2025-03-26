@@ -1,0 +1,13 @@
+<h1>Customers</h1>
+<ul>
+{% for customer in customers %}
+    <li>
+        <a href="#">{{ customer }}</a>
+        <ul>
+            {% for account in customer.accounts.all %}
+                <li><a href="{% url 'account_detail' account.id %}">{{ account }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>
