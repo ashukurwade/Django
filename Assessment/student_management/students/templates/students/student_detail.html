@@ -1,0 +1,15 @@
+
+{% extends 'students/base.html' %}
+
+{% block content %}
+    <h2>Student Details</h2>
+    <p><strong>Roll Number:</strong> {{ student.roll_number }}</p>
+    <p><strong>Name:</strong> {{ student.first_name }} {{ student.last_name }}</p>
+    <p><strong>Date of Birth:</strong> {{ student.date_of_birth }}</p>
+    <p><strong>Grade:</strong> {{ student.grade }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+    
+    <a href="{% url 'update_student' student.pk %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'delete_student' student.pk %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'student_list' %}" class="btn btn-primary">Back to List</a>
+{% endblock %}
